@@ -1,0 +1,51 @@
+@use "vars";
+@use "header";
+@use "hero";
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: vars.$font-main;
+    font-weight: 400;
+    list-style: none;
+}
+
+body {
+    background-color: vars.$bg-body;
+    cursor: default;
+}
+
+button {
+    cursor: pointer;
+}
+
+.header__button {
+    background-color: transparent;
+    color: vars.$color-gray-lighten;
+    border: none;
+    font-size: 16px;
+    transition: .25s;
+    padding: 0 16px;
+    min-height: 60px;
+
+    i {
+        font-size: 12px;
+        margin-left: 4px;
+        transition: .25s;
+    }
+
+    .header__manipulate__button {
+        font-size: 18px;
+
+        &__profile {
+            font-size: 24px;
+        }
+    }
+
+    &:hover {
+        background-color: darken(vars.$bg-header, 10%);
+        color: vars.$color-white;
+        font-weight: 500;
+    }
+}

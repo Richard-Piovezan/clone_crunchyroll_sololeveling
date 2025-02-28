@@ -1,0 +1,39 @@
+@use "vars";
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: vars.$bg-header;
+    padding: 0 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__crunchyroll-logo {
+        max-width: 138px;
+    }
+    
+    &__navbar {
+        &__list {
+            &__item {
+                display: inline;
+            }
+            &__div {
+                margin: 0 10px;
+                color: vars.$color-gray-dark;
+                font-size: 20px;
+            }
+        }
+    }
+
+    &__user-manipulate {
+        &__list {
+            &__item {
+                display: inline;
+            }
+        }
+    }
+}

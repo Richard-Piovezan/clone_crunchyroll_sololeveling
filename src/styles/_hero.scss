@@ -1,0 +1,138 @@
+@use "vars";
+
+.hero {
+    min-height: 60vh;
+    background-image: url(../../dist/images/banner.png);
+    background-size: cover;
+    padding: 0 64px;
+    display: flex;
+    flex-direction: column;
+
+    &__infos {
+        &__solo-leveling-logo {
+            max-width: 300px;
+            margin: 140px 0px 20px;
+        }
+
+        &__about {
+            &__item {
+                display: inline;
+                color: vars.$color-gray-lighten;
+                font-size: 14px;
+                margin-left: 6px;
+
+                a {
+                    margin-left: 0px;
+                }
+
+                &__age16 {
+                    max-width: 20px;
+                }
+                
+                &__link {
+                    .link {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        &__rate {
+            margin-top: 10px;
+            display: flex;
+            cursor: pointer;
+
+            &__stars {
+                color: vars.$color-orange;
+                font-size: 24px;
+            }
+
+            &__div {
+                color: vars.$color-gray-dark;
+                font-size: 24px;
+                margin: 0 10px;
+            }
+
+            &__numbers {
+                color: vars.$color-white;
+                font-weight: 900;
+                font-size: 14px;
+                display: flex;
+                align-items: center;
+
+                i {
+                    font-size: 12px;
+                    font-weight: 500;
+                    margin-left: 5px;
+                }
+
+                &:hover {
+                    color: vars.$color-white;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &__watch {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+        height: 40px;
+
+        &__watch-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 900;
+            text-transform: uppercase;
+            padding: 4px 16px;
+            background-color: vars.$color-orange;
+            border: none;
+            transition: .25s;
+            margin-right: 10px;
+
+            i {
+                font-size: 26px;
+                margin-right: 6px;
+            }
+
+            &:hover {
+                background-color: lighten(vars.$color-orange, 10%);
+            }
+        }
+
+        &__save-button {
+            background-color: transparent;
+            border: 2.5px solid vars.$color-orange;
+            color: vars.$color-orange;
+            font-size: 20px;
+            font-weight: 900;
+            height: 40px;
+            width: 40px;
+        }
+
+        &__function {
+            color: vars.$color-orange;
+            background-color: transparent;
+            border: none;
+            text-decoration: none;
+            font-size: 26px;
+            margin-left: 26px;
+
+            .bi-plus {
+                font-size: 40px;
+            }
+        }
+    }
+
+    &__description {
+        color: vars.$color-white;
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 60px;
+    }
+}
