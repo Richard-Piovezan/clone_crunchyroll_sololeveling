@@ -27,10 +27,9 @@
 }
 
 .hero {
-  min-height: 60vh;
   background-image: url(../../dist/images/banner.png);
-  background-size: cover;
-  padding: 0 64px;
+  background-size: contain;
+  background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
 }
@@ -132,9 +131,60 @@
 }
 .hero__description {
   color: #FFFFFF;
+  margin-top: 40px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 60px;
+  column-gap: 160px;
+}
+.hero__description__story {
+  font-size: 16px;
+}
+.hero__description__infos {
+  font-size: 14px;
+  color: #A0A0A0;
+  display: flex;
+}
+.hero__description__infos p {
+  margin-bottom: 10px;
+}
+.hero__description__infos .emphasis {
+  color: #FFFFFF;
+  margin-right: 4px;
+}
+.hero__description__infos img {
+  width: 18px;
+  margin-right: 4px;
+}
+.hero__description__infos .copy-right {
+  font-size: 12px;
+  padding-top: 8px;
+}
+.hero__description__button {
+  font-size: 12px;
+  font-weight: 900;
+  color: #FF640A;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  transition: 0.25s;
+}
+.hero__description__button:hover {
+  color: #FFFFFF;
+}
+
+#hero-all-content-story,
+#hero-all-content-infos {
+  display: none;
+  transition: 0.5s ease-in-out;
+}
+
+.hero__description__story__close__opacity-one {
+  color: #A0A0A0;
+}
+
+.hero__description__story__close__opacity-two {
+  color: #59595B;
 }
 
 * {
@@ -179,4 +229,14 @@ button {
   background-color: rgb(12.1153846154, 12.8076923077, 14.8846153846);
   color: #FFFFFF;
   font-weight: 500;
+}
+
+.main__container {
+  padding: 0 64px;
+}
+
+.html__div {
+  margin: 24px 0;
+  background-color: #59595B;
+  height: 1px;
 }

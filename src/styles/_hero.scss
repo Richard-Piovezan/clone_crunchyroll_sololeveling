@@ -1,10 +1,9 @@
 @use "vars";
 
 .hero {
-    min-height: 60vh;
     background-image: url(../../dist/images/banner.png);
-    background-size: cover;
-    padding: 0 64px;
+    background-size: contain;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
 
@@ -130,9 +129,67 @@
 
     &__description {
         color: vars.$color-white;
-
+        margin-top: 40px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 60px;
+        column-gap: 160px;
+
+        &__story {
+            font-size: 16px;
+        }
+
+        &__infos {
+            font-size: 14px;
+            color: vars.$color-gray;
+            display: flex;
+
+            p {
+                margin-bottom: 10px;
+            }
+
+            .emphasis {
+                color: vars.$color-white;
+                margin-right: 4px;
+            }
+
+            img {
+                width: 18px;
+                margin-right: 4px;
+            }
+
+            .copy-right {
+                font-size: 12px;
+                padding-top: 8px;
+            }
+        }
+
+        &__button {
+            font-size: 12px;
+            font-weight: 900;
+            color: vars.$color-orange;
+            text-transform: uppercase;
+            background-color: transparent;
+            border: none;
+            text-align: left;
+            transition: .25s;
+
+            &:hover {
+                color: vars.$color-white;
+            }
+        }
     }
+}
+
+#hero-all-content-story,
+#hero-all-content-infos {
+    display: none;
+    transition: .5s ease-in-out;
+}
+
+.hero__description__story__close__opacity-one {
+    color: vars.$color-gray;
+}
+
+.hero__description__story__close__opacity-two {
+    color: vars.$color-gray-dark;
 }

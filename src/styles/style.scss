@@ -49,3 +49,13 @@ button {
         font-weight: 500;
     }
 }
+
+.main__container {
+    padding: 0 64px;
+}
+
+.html__div {
+    margin: 24px 0;
+    background-color: vars.$color-gray-dark;
+    height: 1px;
+}
