@@ -3,6 +3,7 @@
   position: sticky;
   top: 0;
   left: 0;
+  z-index: 1;
   width: 100%;
   height: 60px;
   background-color: #23252B;
@@ -185,6 +186,130 @@
 
 .hero__description__story__close__opacity-two {
   color: #59595B;
+}
+
+.shows__header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin-bottom: 24px;
+}
+.shows__header select {
+  background-color: transparent;
+  color: #FFFFFF;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 8px;
+}
+.shows__header select:hover {
+  color: #2abdbb;
+}
+.shows__header select:focus {
+  background-color: #59595B;
+  color: #FFFFFF;
+}
+.shows__header__right {
+  position: absolute;
+  right: 0;
+}
+.shows__header__right .recents, .shows__header__right .options {
+  color: #A0A0A0;
+  background-color: transparent;
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px 12px 10px 8px;
+  border: none;
+  outline: none;
+}
+.shows__header__right .recents .bi, .shows__header__right .options .bi {
+  font-size: 24px;
+  margin-right: 4px;
+  align-items: center;
+}
+.shows__header__right .recents:hover, .shows__header__right .options:hover {
+  background-color: rgb(38.25, 38.25, 38.25);
+  color: #FFFFFF;
+}
+.shows__list {
+  display: none;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 3%;
+  overflow: hidden;
+}
+.shows__list--is-active {
+  display: grid;
+}
+.shows__list__item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 38px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.shows__list__item img {
+  max-width: 230px;
+  margin-bottom: 8px;
+}
+.shows__list__item__name {
+  color: #A0A0A0;
+  font-size: 10px;
+  margin-bottom: 8px;
+}
+.shows__list__item__ep {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.shows__list__item__languages {
+  font-size: 12px;
+  color: #A0A0A0;
+  position: relative;
+  width: 100%;
+  text-transform: none;
+}
+.shows__list__item__languages p {
+  position: absolute;
+  left: 0;
+}
+.shows__list__item__languages i {
+  position: absolute;
+  right: 0;
+  font-size: 16px;
+}
+.shows__footer {
+  text-transform: uppercase;
+  display: flex;
+  position: relative;
+}
+.shows__footer p {
+  font-weight: 700;
+  font-size: 14px;
+  color: #A0A0A0;
+}
+.shows__footer .bi {
+  font-size: 16px;
+}
+.shows__footer__last-season {
+  position: absolute;
+  left: 0;
+}
+.shows__footer__next-season {
+  position: absolute;
+  right: 0;
+}
+.shows__footer .season--no-active p {
+  color: #A0A0A0;
+  cursor: default;
+}
+.shows__footer .season--is-active p {
+  color: #DADADA;
+  cursor: pointer;
 }
 
 * {

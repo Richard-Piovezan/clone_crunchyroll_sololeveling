@@ -1,0 +1,156 @@
+@use "vars";
+
+.shows {
+
+    &__header {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        position: relative;
+        margin-bottom: 24px;
+
+        select {
+            background-color: transparent;
+            color: vars.$color-white;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            padding: 8px;
+
+            &:hover {
+                color: vars.$color-cyan;
+            }
+
+            &:focus {
+                background-color: vars.$color-gray-dark;
+                color: vars.$color-white;
+            }
+        }
+
+        &__right {
+            position: absolute;
+            right: 0;
+            
+            .recents, .options {
+                color: vars.$color-gray;
+                background-color: transparent;
+                font-weight: 700;
+                font-size: 14px;
+                text-transform: uppercase;
+                padding: 10px 12px 10px 8px;
+                border: none;
+                outline: none;
+
+                .bi {
+                    font-size: 24px;
+                    margin-right: 4px;
+                    align-items: center;
+                }
+
+                &:hover {
+                    background-color: lighten(vars.$bg-body, 15%);
+                    color: vars.$color-white;
+                }
+            }
+        }
+    }
+
+    &__list {
+        display: none;
+        grid-template-columns: repeat(5, 1fr);
+        column-gap: 3%;
+        overflow: hidden;
+
+        &--is-active {
+            display: grid;
+        }
+
+        &__item {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 38px;
+            text-transform: uppercase;
+            cursor: pointer;
+
+            img {
+                max-width: 230px;
+                margin-bottom: 8px;
+            }
+            
+            &__name {
+                color: vars.$color-gray;
+                font-size: 10px;
+                margin-bottom: 8px;
+            }
+            
+            &__ep {
+                color: vars.$color-white;
+                font-size: 14px;
+                font-weight: 700;
+                margin-bottom: 8px;
+            }
+
+            &__languages {
+                font-size: 12px;
+                color: vars.$color-gray;
+                position: relative;
+                width: 100%;
+                text-transform: none;
+
+                p {
+                    position: absolute;
+                    left: 0;
+                }
+
+                i {
+                    position: absolute;
+                    right: 0;
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+
+    &__footer {
+        text-transform: uppercase;
+        display: flex;
+        position: relative;
+
+        p {
+            font-weight: 700;
+            font-size: 14px;
+            color: vars.$color-gray;
+        }
+        
+        .bi {
+            font-size: 16px;
+        }
+
+        &__last-season {
+            position: absolute;
+            left: 0;
+        }
+
+        &__next-season {
+            position: absolute;
+            right: 0;
+        }
+
+        .season--no-active {
+            p {
+                color: vars.$color-gray;
+                cursor: default;
+            }
+        }
+
+        .season--is-active {
+            p {
+                color: vars.$color-gray-lighten;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
