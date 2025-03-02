@@ -58,8 +58,8 @@
 
     &__list {
         display: none;
-        grid-template-columns: repeat(5, 1fr);
-        column-gap: 3%;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        column-gap: 1%;
         overflow: hidden;
 
         &--is-active {
@@ -69,7 +69,7 @@
         &__item {
             display: flex;
             flex-direction: column;
-            width: 100%;
+            width: 230px;
             margin-bottom: 38px;
             text-transform: uppercase;
             cursor: pointer;
@@ -149,6 +149,55 @@
             p {
                 color: vars.$color-gray-lighten;
                 cursor: pointer;
+            }
+        }
+    }
+
+    &__nav {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        position: relative;
+        margin-bottom: 24px;
+        
+
+        &__prev {
+            position: absolute;
+            left: 1%;
+
+            .bi {
+                margin-right: 4px;
+            }
+        }
+
+        &__next {
+            position: absolute;
+            right: 1%;
+
+            .bi {
+                margin-left: 4px;
+            }
+        }
+
+        button {
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 700;
+            background-color: transparent;
+            border: none;
+            color: lighten(vars.$color-gray, 5%);
+            transition: .25s;
+
+            &:hover {
+                color: vars.$color-white;
+            }
+
+            &:disabled {
+                opacity: .4;
+                cursor: default;
+
+                &:hover {
+                    color: lighten(vars.$color-gray, 5%);
+                }
             }
         }
     }

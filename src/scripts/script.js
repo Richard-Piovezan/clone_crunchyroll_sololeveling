@@ -26,25 +26,37 @@ function changeSeason() {
     const selectSeasons = document.getElementById("select-season");
     const showSeason1 = document.getElementById("season1");
     const showSeason2 = document.getElementById("season2");
+    const navSeason = document.querySelector(".shows__nav");
+    const prevSeason = document.getElementById("prev-season");
+    const nextSeason = document.getElementById("next-season");
 
     
-    selectSeasons.addEventListener("change", atualizarTemporada);
-    atualizarTemporada();
+    selectSeasons.addEventListener("change", attSeason);
+    prevSeason.addEventListener("click", () => {
+        selectSeasons.value = "T1: Solo Leveling";
+        attSeason();
+    });
+    nextSeason.addEventListener("click", () => {
+        selectSeasons.value = "T2: Solo Leveling";
+        attSeason();
+    })
 
 
-    function atualizarTemporada() {
+    function attSeason() {
         if (selectSeasons.value === "T1: Solo Leveling") {
-            console.log("T1");
             showSeason1.classList.add("shows__list--is-active");
             showSeason2.classList.remove("shows__list--is-active");
+            prevSeason.disabled = true;
+            nextSeason.disabled = false;
         } else if (selectSeasons.value === "T2: Solo Leveling") {
-            console.log("T2");
             showSeason2.classList.add("shows__list--is-active");
             showSeason1.classList.remove("shows__list--is-active");
+            prevSeason.disabled = false;
+            nextSeason.disabled = true;
         }
     }
 }
 
 window.onload = function () {
     changeSeason();
-};
+}

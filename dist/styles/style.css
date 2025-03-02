@@ -29,10 +29,16 @@
 
 .hero {
   background-image: url(../../dist/images/banner.png);
-  background-size: contain;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 1919px) {
+  .hero {
+    background-size: cover;
+  }
 }
 .hero__infos__solo-leveling-logo {
   max-width: 300px;
@@ -236,8 +242,8 @@
 }
 .shows__list {
   display: none;
-  grid-template-columns: repeat(5, 1fr);
-  column-gap: 3%;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  column-gap: 1%;
   overflow: hidden;
 }
 .shows__list--is-active {
@@ -246,7 +252,7 @@
 .shows__list__item {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 230px;
   margin-bottom: 38px;
   text-transform: uppercase;
   cursor: pointer;
@@ -310,6 +316,45 @@
 .shows__footer .season--is-active p {
   color: #DADADA;
   cursor: pointer;
+}
+.shows__nav {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  position: relative;
+  margin-bottom: 24px;
+}
+.shows__nav__prev {
+  position: absolute;
+  left: 1%;
+}
+.shows__nav__prev .bi {
+  margin-right: 4px;
+}
+.shows__nav__next {
+  position: absolute;
+  right: 1%;
+}
+.shows__nav__next .bi {
+  margin-left: 4px;
+}
+.shows__nav button {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 700;
+  background-color: transparent;
+  border: none;
+  color: rgb(172.75, 172.75, 172.75);
+  transition: 0.25s;
+}
+.shows__nav button:hover {
+  color: #FFFFFF;
+}
+.shows__nav button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.shows__nav button:disabled:hover {
+  color: rgb(172.75, 172.75, 172.75);
 }
 
 * {

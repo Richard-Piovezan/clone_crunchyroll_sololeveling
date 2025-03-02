@@ -2,10 +2,15 @@
 
 .hero {
     background-image: url(../../dist/images/banner.png);
-    background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 1919px) {
+        background-size: cover;
+    }
 
     &__infos {
         &__solo-leveling-logo {
