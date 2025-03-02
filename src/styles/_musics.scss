@@ -1,0 +1,102 @@
+@use "vars";
+
+.musics {
+    padding-bottom: 80px;
+
+    &__section-title {
+        color: vars.$color-white;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 28px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 3%;
+        
+        @media (max-width: 1768px) {
+            overflow-x: scroll;
+        }
+
+        &::-webkit-scrollbar {
+            background-color: lighten(vars.$bg-body, 15%);
+            border-radius: 50px;
+            height: 10px;
+
+            &-thumb {
+                background-color: vars.$color-gray-dark;
+                border-radius: 50px;
+                
+                &:hover {
+                    background-color: vars.$color-gray;
+                }
+            }
+
+        }
+        
+        &__item {
+            width: 230px;
+            padding: 4px 8px 24px;
+
+            a {
+                text-decoration: none;
+            }
+
+            .card-musics-container {
+                position: relative;
+                
+                &-bgplay {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    color: vars.$color-white;
+                    background-color: rgba(0, 0, 0, .5);
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100%;
+
+                    .bi {
+                        font-size: 70px;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-45%, -50%);
+                    }
+                }
+            }
+
+            &__card {
+                width: 100%;
+                height: 180px;
+            }
+            
+            &__about {
+                text-decoration: none;
+                color: vars.$color-white;
+                display: flex;
+                flex-direction: column;
+
+                &-artist {
+                    font-size: 10px;
+                    font-weight: 900;
+                    color: vars.$color-gray-dark;
+                    margin: 4px 0;
+                }
+
+                &-song-name {
+                    font-size: 16px;
+                    font-weight: 600;
+                    margin: 4px 0;
+                }
+
+                &-genre {
+                    margin: 4px 0;
+                    font-size: 14px;
+                    color: vars.$color-gray;
+                }
+            }
+        }
+    }
+}
