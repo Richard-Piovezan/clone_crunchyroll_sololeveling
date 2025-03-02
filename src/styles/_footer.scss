@@ -1,0 +1,96 @@
+@use "vars";
+
+.footer {
+    padding-bottom: 60px;
+    background: linear-gradient(vars.$bg-body 0%, vars.$bg-footer 100%);
+
+    &__container {
+        padding: 0 180px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 3%;
+        
+        &__item {
+
+            &-title {
+                color: vars.$color-white;
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 20px;
+            }
+
+            &__sections {
+                display: flex;
+                flex-direction: column;
+                font-size: 14px;
+                
+                &-item {
+                    margin-bottom: 12px;
+                    
+                    a{
+                        color: vars.$color-gray;
+                        font-weight: 500;
+                        text-decoration: none;
+                        transition: .25s;
+
+                        .bi {
+                            margin-right: 6px;
+                            font-size: 16px;
+                        }
+
+                        &:hover {
+                            color: vars.$color-white;
+                            text-decoration: underline;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__end {
+        display: flex;
+        position: relative;
+
+        &__brand {
+            display: flex;
+            align-items: center;
+
+            &-img {
+                width: 160px;
+                height: 15px;
+            }
+
+            &-copy-crunchy {
+                color: vars.$color-gray;
+                margin-left: 8px;
+            }
+        }
+
+        &__language {
+            position: absolute;
+            right: 0;
+
+            select {
+                text-transform: uppercase;
+                background-color: transparent;
+                border: none;
+                color: vars.$color-gray;
+                font-size: 14px;
+                font-weight: 700;
+                padding: 12px 8px;
+                cursor: pointer;
+                outline: none;
+                transition: .25s;
+
+                &:hover, &:focus {
+                    background-color: darken(vars.$color-gray-dark, 20%);
+                    color: vars.$color-white;
+                }
+            }
+        }
+    }
+}
