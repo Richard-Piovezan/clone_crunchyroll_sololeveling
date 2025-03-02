@@ -1,0 +1,66 @@
+@use "vars";
+
+.recommendation {
+    padding-bottom: 80px;
+    
+    &-section-title {
+        color: vars.$color-white;
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 26px;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(25, 1fr);
+        gap: 3%;
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            height: 5px;
+            background-color: lighten(vars.$bg-body, 15%);
+            cursor: e-resize;
+            border-radius: 50px;
+            
+            &-thumb {
+                background-color: vars.$color-orange;
+                border-radius: 50px;
+                
+                &:hover {
+                    background-color: lighten(vars.$color-orange, 10%);
+                    cursor: e-resize;
+                }
+            }
+        }
+
+
+        &__item {
+
+            padding: 0 0 8px;
+            margin-bottom: 20px;
+
+            &-card {
+                width: 230px;
+            }
+
+            &__about {
+                color: vars.$color-white;
+                display: flex;
+                flex-direction: column;
+
+                &-name {
+                    font-size: 14px;
+                    font-weight: 600;
+                    margin: 5px 0;
+                }
+
+                &-options {
+                    margin: 5px 0;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: vars.$color-gray;
+                }
+            }
+        }
+    }
+}
