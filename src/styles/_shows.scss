@@ -10,6 +10,10 @@
         position: relative;
         margin-bottom: 24px;
 
+        @media (max-width: 768px) {
+            justify-content: center;
+        }
+
         select {
             background-color: transparent;
             color: vars.$color-white;
@@ -43,6 +47,10 @@
                 border: none;
                 outline: none;
 
+                @media (max-width: 768px) {
+                    display: none;
+                }
+
                 .bi {
                     font-size: 24px;
                     margin-right: 4px;
@@ -59,9 +67,29 @@
 
     &__list {
         display: none;
-        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-        column-gap: 1%;
+        grid-template-columns: repeat(6, 1fr);
+        column-gap: 16px;
         overflow: hidden;
+
+        @media (max-width: 1730px) {
+            grid-template-columns: repeat(5, 1fr);
+            column-gap: 20px;
+        }
+
+        @media (max-width: 1436px) {
+            grid-template-columns: repeat(4, 1fr);
+            column-gap: 25px;
+        }
+
+        @media (max-width: 1022px) {
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 33.3px;
+        }
+
+        @media (max-width: 797px) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 50px;
+        }
 
         &--is-active {
             display: grid;
@@ -70,13 +98,13 @@
         &__item {
             display: flex;
             flex-direction: column;
-            width: 230px;
+            width: 100%;
             margin-bottom: 38px;
             text-transform: uppercase;
             cursor: pointer;
 
             img {
-                max-width: 230px;
+                max-width: 100%;
                 margin-bottom: 8px;
             }
             
@@ -132,6 +160,10 @@
         &__last-season {
             position: absolute;
             left: 0;
+
+            @media (max-width: 768px) {
+                content: "anterior";
+            }
         }
 
         &__next-season {
@@ -188,6 +220,10 @@
             color: lighten(vars.$color-gray, 5%);
             transition: .25s;
 
+            @media (max-width: 768px) {
+                display: none;
+            }
+
             &:hover {
                 color: vars.$color-white;
             }
@@ -203,4 +239,3 @@
         }
     }
 }
-

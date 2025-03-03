@@ -45,6 +45,19 @@
 
             &-card {
                 width: 230px;
+
+                @media (max-width: 1080px) {
+                    width: 160px;
+                }
+                
+                @media (min-width: 1081px) and (max-width: 1423px) {
+                    width: 235px;
+                }
+                
+                @media (min-width: 1423px) and (max-width: 1702px) {
+                    width: 290px;
+                }
+                
             }
 
             &__about {

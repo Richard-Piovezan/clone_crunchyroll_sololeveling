@@ -5,25 +5,57 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    display: flex;
-    flex-direction: column;
 
     @media (max-width: 1919px) {
         background-size: cover;
     }
 
+    @media (max-width: 1280px) {
+        background-position: left;
+    }
+
+    @media (max-width: 1060px) {
+        background-position: center;
+    }
+
+    @media (max-width: 768px) {
+        height: 400px;
+        width: 100vw;
+        margin-bottom: 200px;
+    }
+
     &__infos {
+        @media (max-width: 1060px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         &__solo-leveling-logo {
             max-width: 300px;
             margin: 140px 0px 20px;
+
+            @media (max-width: 1060px) {
+                margin: 400px 0 20px;
+            }
+
+            @media (max-width: 768px) {
+                margin: 60px auto;
+            }
         }
 
         &__about {
+            @media (max-width: 1060px) {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
             &__item {
                 display: inline;
                 color: vars.$color-gray-lighten;
                 font-size: 14px;
                 margin-left: 6px;
+
 
                 a {
                     margin-left: 0px;
@@ -40,11 +72,24 @@
                 }
             }
         }
+        
+        @media(max-width: 800px) {
+            display: flex;
+            flex-direction: column;
+        }
 
         &__rate {
             margin-top: 10px;
             display: flex;
             cursor: pointer;
+
+            @media (max-width: 1060px) {
+                justify-content: center;
+            }
+
+            @media (max-width: 768px) {
+                display: block;
+            }
 
             &__stars {
                 color: vars.$color-orange;
@@ -85,6 +130,16 @@
         margin-top: 24px;
         height: 40px;
 
+        @media (max-width: 1060px) {
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            display: block;
+            margin-bottom: 100px;
+            text-align: center;
+        }
+
         &__watch-button {
             display: flex;
             align-items: center;
@@ -97,6 +152,10 @@
             border: none;
             transition: .25s;
             margin-right: 10px;
+
+            @media (max-width: 768px) {
+                margin: 0 auto;
+            }
 
             i {
                 font-size: 26px;
@@ -137,7 +196,14 @@
         margin-top: 40px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        column-gap: 160px;
+        column-gap: 10%;
+
+        @media (max-width: 870px) {
+            grid-template-columns: 1fr;
+            .hero-hidden {
+                display: none;
+            }
+        }
 
         &__story {
             font-size: 16px;
@@ -177,6 +243,15 @@
             border: none;
             text-align: left;
             transition: .25s;
+
+            @media (max-width: 870px) {
+                text-align: center;
+            }
+            
+            @media (max-width: 768px) {
+                margin-top: 10px;
+                text-align: left;
+            }
 
             &:hover {
                 color: vars.$color-white;

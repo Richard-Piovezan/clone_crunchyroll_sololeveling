@@ -56,6 +56,10 @@ button {
 
 .main__container {
     padding: 0 64px;
+
+    @media (max-width: 768px) {
+        padding: 0 20px;
+    }
 }
 
 .html__div {
