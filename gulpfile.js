@@ -6,7 +6,7 @@ const uglify = require("gulp-uglify");
 function styles() {
     return gulp
         .src("./src/styles/style.scss")
-        .pipe(sass({outputStyle: 'compressed'}).on("error", sass.logError))
+        .pipe(sass({outputStyle: "compressed"}).on("error", sass.logError))
         .pipe(gulp.dest("./dist/styles"));
 }
 
